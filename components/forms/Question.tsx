@@ -137,8 +137,7 @@ const Question = ({ type, mongoUserId, questionDetails }: Props) => {
                 />
               </FormControl>
               <FormDescription className="body-regular mt-2.5 text-light-500">
-                Be specific and imagine you&apos;re asking a question to another
-                person.
+                كن محددًا وتخيل أنك تطرح سؤالاً على شخص آخر.
               </FormDescription>
               <FormMessage className="text-red-500" />
             </FormItem>
@@ -150,8 +149,7 @@ const Question = ({ type, mongoUserId, questionDetails }: Props) => {
           render={({ field }) => (
             <FormItem className="flex w-full flex-col gap-3">
               <FormLabel className="paragraph-semibold text-dark400_light800">
-                Detailed explanation of your problem{" "}
-                <span className="text-primary-500">*</span>
+                شرح مفصل لمشكلتك <span className="text-primary-500">*</span>
               </FormLabel>
               <FormControl className="mt-3.5">
                 <Editor
@@ -194,8 +192,7 @@ const Question = ({ type, mongoUserId, questionDetails }: Props) => {
                 />
               </FormControl>
               <FormDescription className="body-regular mt-2.5 text-light-500">
-                Introduce the problem and expand on what you put in the title.
-                Minimum 20 characters.
+                اعرض المشكلة وتوسع في ما وضعته في العنوان. الحد الأدنى 20 حرفا.{" "}
               </FormDescription>
               <FormMessage className="text-red-500" />
             </FormItem>
@@ -207,7 +204,7 @@ const Question = ({ type, mongoUserId, questionDetails }: Props) => {
           render={({ field }) => (
             <FormItem className="flex w-full flex-col">
               <FormLabel className="paragraph-semibold text-dark400_light800">
-                Tags <span className="text-primary-500">*</span>
+                المواضيع <span className="text-primary-500">*</span>
               </FormLabel>
               <FormControl className="mt-3.5">
                 <>
@@ -217,7 +214,7 @@ const Question = ({ type, mongoUserId, questionDetails }: Props) => {
                     placeholder="Add tags..."
                     onKeyDown={(e) => handleInputKeyDown(e, field)}
                   />
-                  /** To Do **/ 
+                  /** To Do **/
                   {/* {field.value.length > 0 && (
                     <div className="flex-start mt-2.5 gap-2.5">
                       {field.value.map((tag: any) => (
@@ -247,8 +244,8 @@ const Question = ({ type, mongoUserId, questionDetails }: Props) => {
                 </>
               </FormControl>
               <FormDescription className="body-regular mt-2.5 text-light-500">
-                Add up to 3 tags to describe what your question is about. You
-                need to press enter to add a tag.
+                أضف ما يصل إلى 3 مواضيهع لوصف موضوع سؤالك. أنت تحتاج إلى الضغط
+                على زر الإدخال لإضافة علامة.{" "}
               </FormDescription>
               <FormMessage className="text-red-500" />
             </FormItem>
