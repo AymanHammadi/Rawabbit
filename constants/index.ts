@@ -19,7 +19,7 @@ export const sidebarLinks: SidebarLink[] = [
   },
   {
     imgURL: "/assets/icons/tag.svg",
-    route: "/tags",
+    route: "/categories",
     label: "الفئات",
   },
   {
@@ -27,12 +27,19 @@ export const sidebarLinks: SidebarLink[] = [
     route: "/profile",
     label: "الملف الشخصي",
   },
+  // {
+  //   imgURL: "/assets/icons/question.svg",
+  //   route: "/questions",
+  //   label: "الأسئلة",
+  // },
   {
-    imgURL: "/assets/icons/question.svg",
-    route: "/questions",
-    label: "الأسئلة",
+    imgURL: "/assets/icons/folder-plus-solid.svg",
+    route: "/request-add",
+    label: "طلب إضافة",
   },
 ];
+
+
 
 export const BADGE_CRITERIA = {
   QUESTION_COUNT: {
