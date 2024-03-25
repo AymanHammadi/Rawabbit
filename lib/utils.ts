@@ -22,25 +22,25 @@ export const getTimestamp = (createdAt: Date): string => {
 
   if (timeDifference < minute) {
     const seconds = Math.floor(timeDifference / 1000);
-    return `${seconds} ${seconds === 1 ? "second" : "seconds"} قبل`;
+    return `${seconds} ${seconds === 1 ? "ثانية" : "ثوانٍ"} قبل`;
   } else if (timeDifference < hour) {
     const minutes = Math.floor(timeDifference / minute);
-    return `${minutes} ${minutes === 1 ? "minute" : "minutes"} قبل`;
+    return `${minutes} ${minutes === 1 ? "دقيقة" : "دقائق"} قبل`;
   } else if (timeDifference < day) {
     const hours = Math.floor(timeDifference / hour);
-    return `${hours} ${hours === 1 ? "hour" : "hours"} قبل`;
+    return `${hours} ${hours === 1 ? "ساعة" : "ساعات"} قبل`;
   } else if (timeDifference < week) {
     const days = Math.floor(timeDifference / day);
-    return `${days} ${days === 1 ? "day" : "days"} قبل`;
+    return `${days} ${days === 1 ? "يوم" : "أيام"} قبل`;
   } else if (timeDifference < month) {
     const weeks = Math.floor(timeDifference / week);
-    return `${weeks} ${weeks === 1 ? "week" : "weeks"} قبل`;
+    return `${weeks} ${weeks === 1 ? "أسبوع" : "أسابيع"} قبل`;
   } else if (timeDifference < year) {
     const months = Math.floor(timeDifference / month);
-    return `${months} ${months === 1 ? "month" : "months"} قبل`;
+    return `${months} ${months === 1 ? "شهر" : "أشهر"} قبل`;
   } else {
     const years = Math.floor(timeDifference / year);
-    return `${years} ${years === 1 ? "year" : "years"} قبل`;
+    return `${years} ${years === 1 ? "سنة" : "سنوات"} قبل`;
   }
 };
 

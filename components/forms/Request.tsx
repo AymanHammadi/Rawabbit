@@ -60,24 +60,27 @@ const Request = ({ type, mongoUserId, requestDetails }: Props) => {
     },
   });
 
-  function onSubmit(data: z.infer<typeof WebsiteAppSchema>) {
-    toast({
-      title: "You submitted the following values:",
-      description: <p>{JSON.stringify(data, null, 2)}</p>,
-    });
-  }
+  // function onSubmit(data: z.infer<typeof WebsiteAppSchema>) {
+  //   toast({
+  //     title: "You submitted the following values:",
+  //     description: <p>{JSON.stringify(data, null, 2)}</p>,
+  //   });
+  // }
 
   // 2. Define a submit handler.
-  // async function onSubmit(values: z.infer<typeof WebsiteAppSchema>) {
+  async function onSubmit(values: z.infer<typeof WebsiteAppSchema>) {
 
-  //   try {
-      
-  //     console.log(parsedRequestDetails);
-  //   } catch (error) {
-  //   } finally {
-  //     setIsSubmitting(false);
-  //   }
-  // }
+    try {
+      console.log(JSON.stringify(values));
+      toast({
+        title: "You submitted the following values:",
+        description: <p>{JSON.stringify(parsedRequestDetails)}</p>,
+      });
+    } catch (error) {
+    } finally {
+      setIsSubmitting(false);
+    }
+  }
 
   return (
     <Form {...form}>
@@ -231,12 +234,6 @@ const Request = ({ type, mongoUserId, requestDetails }: Props) => {
           type="submit"
           className="primary-gradient w-fit !text-light-900"
           // disabled={isSubmitting}
-          variant="outline"
-          onClick={() => {
-            toast({
-              description: "Your message has been sent.",
-            });
-          }}
         >
           إرسال الطلب
         </Button>

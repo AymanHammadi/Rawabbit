@@ -3,7 +3,7 @@ import React from "react";
 // import RenderTag from "../shared/RenderTag";
 import Metric from "../shared/Metric";
 import { formatAndDivideNumber, getTimestamp } from "@/lib/utils";
-// import { SignedIn } 
+// import { SignedIn }
 // import EditDeleteAction from "../shared/EditDeleteAction";
 
 interface QuestionProps {
@@ -71,7 +71,7 @@ const QuestionCard = ({
           imgUrl={author.picture}
           alt="user"
           value={author.name}
-          title={` - asked ${getTimestamp(createdAt)}`}
+          title={` - ${getTimestamp(createdAt)}`}
           href={`/profile/${author._id}`}
           isAuthor
           textStyles="body-medium text-dark400_light700"

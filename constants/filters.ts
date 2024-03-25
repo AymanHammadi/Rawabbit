@@ -41,3 +41,12 @@ export const GlobalSearchFilters = [
   { name: "مستخدم", value: "user" },
   { name: "فئة", value: "tag" },
 ];
+
+export const CollectionFilters = [
+  { name: "موقع", value: "website" },
+  { name: "تطبيق", value: "app" },
+  { name: "سؤال", value: "question" },
+  { name: "إجابة", value: "answer" },
+  { name: "فئة", value: "tag" },
+];
+

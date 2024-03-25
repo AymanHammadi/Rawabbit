@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   title: "روابط",
   description: "المواقع والتطبيقات التي تحتاجها في مكان واحد",
   icons: {
-    icon: "./public/assets/images/rawabbit-icon.svg",
+    icon: "./public/assets/images/site-icon.svg",
   },
 };
 

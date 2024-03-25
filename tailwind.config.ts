@@ -20,6 +20,7 @@ module.exports = {
         primary: {
           500: "#3399FF",
           100: "#CCE5FF",
+          50: "#ebf5ff",
           main: "#3399FF",
           light: "#66B2FF",
           dark: "#0061C2",
@@ -30,6 +31,8 @@ module.exports = {
           300: "#1F262E",
           400: "#2F3A46",
           500: "#3B4A59",
+          600: "#12171c",
+          650: "#0a233d",
         },
         light: {
           900: "#FFFFFF",
@@ -38,6 +41,7 @@ module.exports = {
           700: "#DCE3F1",
           500: "#7B8EC8",
           400: "#858EAD",
+          300: "#fafbfd",
         },
         "accent-blue": "#1DA1F2",
       },
