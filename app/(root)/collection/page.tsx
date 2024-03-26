@@ -1,3 +1,4 @@
+import { options } from "@/app/api/auth/[...nextauth]/options";
 import LinkCard from "@/components/cards/LinkCard";
 import Filters from "@/components/shared/Filters";
 import NoResult from "@/components/shared/NoResult";
@@ -6,6 +7,8 @@ import LocalSearchbar from "@/components/shared/search/LocalSearchbar";
 import { CollectionFilters } from "@/constants/filters";
 // import { getSavedCollections } from "@/lib/actions/user.action";
 import { SearchParamsProps } from "@/types";
+import { getServerSession } from "next-auth";
+import { redirect } from "next/navigation";
 // import { auth } 
 export default async function Home({ searchParams }: SearchParamsProps) {
   // const { userId } = auth(); 
@@ -18,6 +21,13 @@ export default async function Home({ searchParams }: SearchParamsProps) {
   //   page: searchParams.page ? +searchParams.page : 1,
   // });
   const fakeLinks: any[] = [];
+  
+  const session = await getServerSession(options);
+
+  if (!session) {
+    redirect("/api/auth/signin?callbackUrl=/collection");
+  }
+
   return (
     <>
       <h1 className="h1-bold text-dark100_light900">المفضلة</h1>

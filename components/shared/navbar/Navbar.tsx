@@ -12,9 +12,9 @@ const Navbar = () => {
     <nav className="flex-between background-light900_dark200 backdrop-blur-sm fixed z-50 w-full gap-5 p-6 shadow-light-main dark:shadow-none sm:px-12">
       <Link href="/" className="flex items-center gap-1">
         <Image
-          src="/assets/images/site-icon.svg"
-          width={23}
-          height={23}
+          src="/assets/images/logo.png"
+          width={50}
+          height={50}
           alt="Rawabbit"
         />
 
