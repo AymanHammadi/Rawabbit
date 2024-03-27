@@ -50,3 +50,8 @@ export const CollectionFilters = [
   { name: "فئة", value: "tag" },
 ];
 
+export const CategoryFilters = [
+  { name: "الأكثر شهرة", value: "popular" },
+  { name: "الأحدث", value: "recent" },
+  { name: "الأقدم", value: "old" },
+];
