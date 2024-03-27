@@ -5,16 +5,13 @@
 @import url("../styles/theme.css");
 
 body {
-  font-family:  "Rubik", sans-serif;
+  font-family: "Rubik", sans-serif;
   direction: rtl;
 }
 
 @layer utilities {
   .flex-center {
     @apply flex justify-center items-center;
-  }
-  .btn-theme {
-    @apply px-3 py-2 text-xs text-primary-main bg-light-300 hover:bg-primary-50 font-medium text-center border hover:border-primary-main dark:hover:border-primary-main rounded-lg focus:outline-none w-32 dark:bg-dark-600 dark:border-dark-400 dark:hover:bg-primary-main dark:hover:bg-opacity-25
   }
   .flex-between {
     @apply flex justify-between items-center;
@@ -27,7 +24,12 @@ body {
   .card-wrapper {
     @apply bg-light-900 dark:dark-gradient shadow-light-100 dark:shadow-dark-100;
   }
-
+  .btn-main-action {
+    @apply text-white bg-primary-500 hover:bg-primary-dark shrink rounded-md btn-background-image btn-box-shadow btn-transition font-semibold hover:shadow-none;
+  }
+  .btn-link {
+    @apply px-3 py-2 text-xs text-primary-main bg-light-300 hover:bg-primary-50 font-medium text-center border hover:border-primary-main dark:hover:border-primary-main rounded-lg focus:outline-none w-32 dark:bg-dark-600 dark:border-dark-400 dark:hover:bg-primary-main dark:hover:bg-opacity-25;
+  }
   .btn {
     @apply bg-light-800 dark:bg-dark-300 !important;
   }
@@ -45,7 +47,7 @@ body {
   }
 
   .primary-gradient {
-    background: linear-gradient(129deg,  #3399FF 0%, #66B2FF 100%);
+    background: linear-gradient(129deg, #3399ff 0%, #66b2ff 100%);
   }
 
   .dark-gradient {
@@ -60,7 +62,15 @@ body {
     @apply min-h-full dark:bg-dark-400 bg-light-800 text-light-500 dark:data-[state=active]:bg-dark-300 data-[state=active]:bg-primary-100 data-[state=active]:text-primary-500 !important;
   }
 }
-
+.btn-box-shadow {
+  box-shadow: #3399FF 0 2px 0.5px inset, #0061C2 0 -3px 1px inset, rgba(11, 13, 14, 0.1) 0 2px 4px 0;
+}
+.btn-background-image {
+  background-image: linear-gradient(180deg, rgba(0, 115, 230, 0.6) 0%, #006BD6 100%);
+}
+.btn-transition {
+  transition: all 120ms ease-in
+}
 .no-focus {
   @apply focus-visible:ring-0 focus-visible:ring-transparent focus-visible:ring-offset-0 !important;
 }
@@ -79,12 +89,11 @@ body {
 }
 
 .text-gradient {
-    background: linear-gradient(90deg, #3399FF 5%, #0073E6 90%);
-
-  }
+  background: linear-gradient(90deg, #3399ff 5%, #0073e6 90%);
+}
 
 .primary-text-gradient {
-  background: linear-gradient(90deg, #3399FF 5%, #0073E6 90%);
+  background: linear-gradient(90deg, #3399ff 5%, #0073e6 90%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -133,7 +142,7 @@ code {
   hyphens: auto;
 
   padding: 2px;
-  color: #ff7000 !important;
+  color: #0000ff !important;
 }
 
 .markdown pre {
@@ -149,8 +158,6 @@ code {
   color: inherit !important;
 }
 /* Markdown End */
-
-
 
 .hash-span {
   margin-top: -140px;
@@ -168,4 +175,3 @@ code {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
-
