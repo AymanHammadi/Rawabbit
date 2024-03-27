@@ -5,7 +5,7 @@ import { useState, useTransition } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
-import { RegisterSchema } from "@/schemas";
+import { RegisterSchema } from "@/lib/validations";
 import { Input } from "@/components/ui/input";
 import {
   Form,
@@ -15,11 +15,11 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { CardWrapper } from "@/components/auth/card-wrapper";
+import { CardWrapper } from "@/components/auth/CardWrapper";
 import { Button } from "@/components/ui/button";
-import { FormError } from "@/components/form-error";
-import { FormSuccess } from "@/components/form-success";
-import { register } from "@/actions/register";
+import { FormError } from "@/components/forms/FormError";
+import { FormSuccess } from "@/components/forms/FormSuccess";
+// import { register } from "@/actions/register";
 
 export const RegisterForm = () => {
   const [error, setError] = useState<string | undefined>("");
@@ -39,12 +39,12 @@ export const RegisterForm = () => {
     setError("");
     setSuccess("");
 
-    startTransition(() => {
-      register(values).then((data) => {
-        setError(data.error);
-        setSuccess(data.success);
-      });
-    });
+    // startTransition(() => {
+    //   register(values).then((data) => {
+    //     setError(data.error);
+    //     setSuccess(data.success);
+    //   });
+    // });
   };
 
   return (
@@ -62,7 +62,7 @@ export const RegisterForm = () => {
               name="name"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Name</FormLabel>
+                  <FormLabel>الاسم</FormLabel>
                   <FormControl>
                     <Input
                       {...field}
@@ -79,7 +79,7 @@ export const RegisterForm = () => {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Email</FormLabel>
+                  <FormLabel>البريد الإلكتروني</FormLabel>
                   <FormControl>
                     <Input
                       {...field}
@@ -97,7 +97,7 @@ export const RegisterForm = () => {
               name="password"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Password</FormLabel>
+                  <FormLabel>كلمة المرور</FormLabel>
                   <FormControl>
                     <Input
                       {...field}
@@ -114,7 +114,7 @@ export const RegisterForm = () => {
           <FormError message={error} />
           <FormSuccess message={success} />
           <Button disabled={isPending} type="submit" className="w-full">
-            Create an account
+            إنشاء حساب
           </Button>
         </form>
       </Form>
