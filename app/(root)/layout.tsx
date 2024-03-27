@@ -13,7 +13,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         <Navbar />
         <div className="flex">
           <RightSidebar />
-          <section className="overflow-y-auto flex-1 px-6 pb-6 pt-36 max-md:pb-14 sm:px-14 middle-section">
+          <section className="overflow-y-auto flex-1 px-6 pb-6 pt-36 max-md:pb-14 sm:px-14">
             <div className="mx-auto w-full max-w-5xl">{children}</div>
           </section>
           <Toaster />

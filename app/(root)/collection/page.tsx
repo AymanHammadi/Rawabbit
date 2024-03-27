@@ -7,8 +7,8 @@ import LocalSearchbar from "@/components/shared/search/LocalSearchbar";
 import { CollectionFilters } from "@/constants/filters";
 // import { getSavedCollections } from "@/lib/actions/user.action";
 import { SearchParamsProps } from "@/types";
-import { getServerSession } from "next-auth";
-import { redirect } from "next/navigation";
+// import { getServerSession } from "next-auth";
+// import { redirect } from "next/navigation";
 // import { auth } 
 export default async function Home({ searchParams }: SearchParamsProps) {
   // const { userId } = auth(); 
@@ -22,11 +22,11 @@ export default async function Home({ searchParams }: SearchParamsProps) {
   // });
   const fakeLinks: any[] = [];
   
-  const session = await getServerSession(options);
+  // const session = await getServerSession(options);
 
-  if (!session) {
-    redirect("/api/auth/signin?callbackUrl=/collection");
-  }
+  // if (!session) {
+  //   redirect("/api/auth/signin?callbackUrl=/collection");
+  // }
 
   return (
     <>

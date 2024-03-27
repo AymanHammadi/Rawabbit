@@ -13,7 +13,9 @@ body {
   .flex-center {
     @apply flex justify-center items-center;
   }
-
+  .btn-theme {
+    @apply px-3 py-2 text-xs text-primary-main bg-light-300 hover:bg-primary-50 font-medium text-center border hover:border-primary-main dark:hover:border-primary-main rounded-lg focus:outline-none w-32 dark:bg-dark-600 dark:border-dark-400 dark:hover:bg-primary-main dark:hover:bg-opacity-25
+  }
   .flex-between {
     @apply flex justify-between items-center;
   }
@@ -76,8 +78,13 @@ body {
   );
 }
 
+.text-gradient {
+    background: linear-gradient(90deg, #3399FF 5%, #0073E6 90%);
+
+  }
+
 .primary-text-gradient {
-  background: linear-gradient(129deg, #3399FF 0%, #66B2FF 100%);
+  background: linear-gradient(90deg, #3399FF 5%, #0073E6 90%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

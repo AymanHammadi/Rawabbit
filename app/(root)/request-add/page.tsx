@@ -14,7 +14,7 @@ const Page = async () => {
   return (
     <div>
       <h1 className="h1-bold text-dark100_light900">
-        اطلب إضافة موقع أو طبيق إلى منصة روابط
+        اطلب إضافة موقع أو تطبيق إلى منصة روابط
       </h1>
 
       <div className="mt-9">

@@ -27,7 +27,6 @@ import Image from "next/image";
 import { useRouter, usePathname } from "next/navigation";
 import { useTheme } from "@/context/ThemeProvider";
 import { Textarea } from "../ui/textarea";
-import { toast } from "../ui/use-toast";
 import { useToast } from "@/components/ui/use-toast";
 
 interface Props {
@@ -72,10 +71,7 @@ const Request = ({ type, mongoUserId, requestDetails }: Props) => {
 
     try {
       console.log(JSON.stringify(values));
-      toast({
-        title: "You submitted the following values:",
-        description: <p>{JSON.stringify(parsedRequestDetails)}</p>,
-      });
+     
     } catch (error) {
     } finally {
       setIsSubmitting(false);

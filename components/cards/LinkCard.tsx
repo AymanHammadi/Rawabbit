@@ -90,7 +90,7 @@ const LinkCard = ({
             {website && (
               <div>
                 <Link href={`${website}`}>
-                  <Button className="px-3 py-2 text-xs text-primary-main bg-light-300 hover:bg-primary-50 font-medium text-center border hover:border-primary-main dark:hover:border-primary-main rounded-lg focus:outline-none w-32 dark:bg-dark-600 dark:border-dark-400 dark:hover:bg-primary-main dark:hover:bg-opacity-25">
+                  <Button className="btn-theme">
                     <span className="ml-2">الموقع</span>
                     <Image
                       src="/assets/icons/arrow-up-right-from-square.svg"
@@ -105,7 +105,7 @@ const LinkCard = ({
             {iosApp && (
               <div>
                 <Link href={`${iosApp}`}>
-                  <Button className="px-3 py-2 text-xs text-primary-main bg-light-300 hover:bg-primary-50 font-medium text-center border hover:border-primary-main dark:hover:border-primary-main rounded-lg focus:outline-none w-32 dark:bg-dark-600 dark:border-dark-400 dark:hover:bg-primary-main dark:hover:bg-opacity-25">
+                  <Button className="btn-theme">
                     <span className="ml-2">تطبيق ios</span>
                     <Image
                       src="/assets/icons/app-store-ios.svg"
