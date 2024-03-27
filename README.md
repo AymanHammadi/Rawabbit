@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# Rawabit
 
-First, run the development server:
+## Description
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+This is a website designed to provide users with a comprehensive platform where they can discover various websites and apps tailored to their interests and needs. The website categorizes content based on countries, making it easy for users to find relevant resources specific to their location.
+
+## Features
+
+- Browse and explore websites and apps curated for different countries.
+- Easily navigate through categories to find specific content.
+- Admin functionality to add new countries, categories, and content links.
+
+## Technologies Used
+
+- Next.js
+- TypeScript
+- MongoDB (with Mongoose)
+- Tailwind CSS
+
+## How to Run
+
+To run this application locally, follow these steps:
+
+1. Clone the repository to your local machine:
+
+```
+git clone https://github.com/AymanHammadi/Rawabbit.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Navigate to the project directory:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+cd Rawabbit
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+3. Install dependencies:
 
-## Learn More
+```
+npm install
+```
 
-To learn more about Next.js, take a look at the following resources:
+4. Set up environment variables:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   - Create a `.env` file in the root directory.
+   - Add the necessary environment variables.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+5. Run the development server:
 
-## Deploy on Vercel
+```
+npm run dev
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+6. Open your browser and navigate to `http://localhost:3000` to view the website.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Environment Variables
+
+This project requires the following environment variables to be set:
+
+- **NEXT_PUBLIC_TINY_EDITOR_API_KEY**: Get from [TinyMCE](https://www.tiny.cloud/) for rich text editing.
+- **GOOGLE_ID & GOOGLE_SECRET**: Create a Google Cloud project for Google OAuth at [Google Cloud Console](https://console.cloud.google.com/).
+- **NEXTAUTH_SECRET**: Generate a random secret string. You can generate a suitable secret using a password generator or a command like `openssl rand -base64 32`.
+- **NEXTAUTH_URL**: Set to your Next.js application's URL (e.g., `https://yourapplication.com`).
+- **MONGODB_URI**: Get from your MongoDB hosting provider (e.g., MongoDB Atlas at [MongoDB Atlas](https://www.mongodb.com/atlas)).
+
+## Contributors
+
+- [Ayman](https://github.com/your-username)
+- [Mohammed](https://github.com/TFmohamedyahia)
+- [Imad](https://github.com/your-username)
+
