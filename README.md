@@ -65,7 +65,7 @@ This project requires the following environment variables to be set:
 
 ## Contributors
 
-- [Ayman](https://github.com/your-username)
+- [Ayman](https://github.com/AymanHammadi)
 - [Mohammed](https://github.com/TFmohamedyahia)
-- [Imad](https://github.com/your-username)
+- [Imad](https://github.com/imadbenmadi/)
 
