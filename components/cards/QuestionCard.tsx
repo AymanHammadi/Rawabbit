@@ -3,7 +3,6 @@ import React from "react";
 // import RenderTag from "../shared/RenderTag";
 import Metric from "../shared/Metric";
 import { formatAndDivideNumber, getTimestamp } from "@/lib/utils";
-// import { SignedIn }
 // import EditDeleteAction from "../shared/EditDeleteAction";
 
 interface QuestionProps {
@@ -37,7 +36,7 @@ const QuestionCard = ({
   answers,
   createdAt,
 }: QuestionProps) => {
-  const showActionButtons = clerkId && clerkId === author.clerkId;
+  // const showActionButtons = clerkId && clerkId === author.clerkId;
 
   return (
     <div className="card-wrapper rounded-[10px] p-9 sm:px-11">
@@ -53,18 +52,8 @@ const QuestionCard = ({
           </Link>
         </div>
 
-        {/* <SignedIn>
-          {showActionButtons && (
-            // <EditDeleteAction type="Question" itemId={JSON.stringify(_id)} />
-          )}
-        </SignedIn> */}
       </div>
 
-      {/* <div className="mt-3.5 flex flex-wrap gap-2">
-        {tags.map((tag) => (
-          <RenderTag key={tag._id} _id={tag._id} name={tag.name} />
-        ))}
-      </div> */}
 
       <div className="flex-between mt-6 w-full flex-wrap gap-3">
         <Metric

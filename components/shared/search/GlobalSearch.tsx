@@ -4,7 +4,7 @@ import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-// import { formUrlQuery, removeKeysFromQuery } from "@/lib/utils";
+import { formUrlQuery, removeKeysFromQuery } from "@/lib/utils";
 // import GlobalResult from "./GlobalResult";
 
 const GlobalSearch = () => {
@@ -39,30 +39,30 @@ const GlobalSearch = () => {
     };
   }, [pathname]);
 
-  // useEffect(() => {
-  //   const delayDebounceFn = setTimeout(() => {
-  //     if (search) {
-  //       const newUrl = formUrlQuery({
-  //         params: searchParams.toString(),
-  //         key: "global",
-  //         value: search,
-  //       });
+  useEffect(() => {
+    const delayDebounceFn = setTimeout(() => {
+      if (search) {
+        const newUrl = formUrlQuery({
+          params: searchParams.toString(),
+          key: "global",
+          value: search,
+        });
 
-  //       router.push(newUrl, { scroll: false });
-  //     } else {
-  //       if (query) {
-  //         const newUrl = removeKeysFromQuery({
-  //           params: searchParams.toString(),
-  //           keysToRemove: ["global", "type"],
-  //         });
+        router.push(newUrl, { scroll: false });
+      } else {
+        if (query) {
+          const newUrl = removeKeysFromQuery({
+            params: searchParams.toString(),
+            keysToRemove: ["global", "type"],
+          });
 
-  //         router.push(newUrl, { scroll: false });
-  //       }
-  //     }
-  //   }, 300);
+          router.push(newUrl, { scroll: false });
+        }
+      }
+    }, 300);
 
-  //   return () => clearTimeout(delayDebounceFn);
-  // }, [search, router, pathname, searchParams, query]);
+    return () => clearTimeout(delayDebounceFn);
+  }, [search, router, pathname, searchParams, query]);
 
   return (
     <div

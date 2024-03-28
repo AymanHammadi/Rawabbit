@@ -1,12 +1,11 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { useForm } from "react-hook-form";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -23,11 +22,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "../ui/button";
 import { WebsiteAppSchema } from "@/lib/validations";
 // import { Badge } from "../ui/badge";
-import Image from "next/image";
-import { useRouter, usePathname } from "next/navigation";
-import { useTheme } from "@/context/ThemeProvider";
 import { Textarea } from "../ui/textarea";
-import { useToast } from "@/components/ui/use-toast";
 
 interface Props {
   type?: string;
@@ -36,11 +31,11 @@ interface Props {
 }
 
 const Request = ({ type, mongoUserId, requestDetails }: Props) => {
-  const { mode } = useTheme();
-  const editorRef = useRef(null);
+  // const { mode } = useTheme();
+  // const editorRef = useRef(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const router = useRouter();
-  const pathname = usePathname();
+  // const router = useRouter();
+  // const pathname = usePathname();
 
   const parsedRequestDetails =
     requestDetails && JSON.parse(requestDetails || "");
@@ -59,12 +54,6 @@ const Request = ({ type, mongoUserId, requestDetails }: Props) => {
     },
   });
 
-  // function onSubmit(data: z.infer<typeof WebsiteAppSchema>) {
-  //   toast({
-  //     title: "You submitted the following values:",
-  //     description: <p>{JSON.stringify(data, null, 2)}</p>,
-  //   });
-  // }
 
   // 2. Define a submit handler.
   async function onSubmit(values: z.infer<typeof WebsiteAppSchema>) {
@@ -229,7 +218,7 @@ const Request = ({ type, mongoUserId, requestDetails }: Props) => {
         <Button
           type="submit"
           className="primary-gradient w-fit !text-light-900"
-          // disabled={isSubmitting}
+          disabled={isSubmitting}
         >
           إرسال الطلب
         </Button>

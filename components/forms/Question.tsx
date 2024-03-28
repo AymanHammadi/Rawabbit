@@ -17,9 +17,8 @@ import { Input } from "@/components/ui/input";
 import { Button } from "../ui/button";
 import { QuestionsSchema } from "@/lib/validations";
 // import { Badge } from "../ui/badge";
-import Image from "next/image";
 // import { createQuestion, editQuestion } from "@/lib/actions/question.action";
-import { useRouter, usePathname } from "next/navigation";
+// import { useRouter, usePathname } from "next/navigation";
 import { useTheme } from "@/context/ThemeProvider";
 
 interface Props {
@@ -32,8 +31,8 @@ const Question = ({ type, mongoUserId, questionDetails }: Props) => {
   const { mode } = useTheme();
   const editorRef = useRef(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const router = useRouter();
-  const pathname = usePathname();
+  // const router = useRouter();
+  // const pathname = usePathname();
 
   const parsedQuestionDetails =
     questionDetails && JSON.parse(questionDetails || "");
@@ -110,11 +109,11 @@ const Question = ({ type, mongoUserId, questionDetails }: Props) => {
     }
   };
 
-  const handleTagRemove = (tag: string, field: any) => {
-    const newTags = field.value.filter((t: string) => t !== tag);
+  // const handleTagRemove = (tag: string, field: any) => {
+  //   const newTags = field.value.filter((t: string) => t !== tag);
 
-    form.setValue("tags", newTags);
-  };
+  //   form.setValue("tags", newTags);
+  // };
 
   return (
     <Form {...form}>
@@ -214,7 +213,6 @@ const Question = ({ type, mongoUserId, questionDetails }: Props) => {
                     placeholder="Add tags..."
                     onKeyDown={(e) => handleInputKeyDown(e, field)}
                   />
-                  /** To Do **/
                   {/* {field.value.length > 0 && (
                     <div className="flex-start mt-2.5 gap-2.5">
                       {field.value.map((tag: any) => (
