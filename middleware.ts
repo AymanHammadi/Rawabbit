@@ -1,7 +1,18 @@
-// Without a defined matcher, this one line applies next-auth
-// to the entire project
-export { default } from "next-auth/middleware";
+import { authMiddleware } from "@clerk/nextjs";
 
-// Applies next-auth only to matching routes - can be regex
-// Ref: https://nextjs.org/docs/app/building-your-application/routing/middleware#matcher
-export const config = { matcher: ["/extra", "/dashboard"] };
+export default authMiddleware({
+  publicRoutes: [
+    "/",
+    "/category/:id",
+    "/tags",
+    "/tags/:id",
+    "/profile/:id",
+    "/content",
+    "/content/:id",
+  ],
+  ignoredRoutes: ["/api/webhook", "/api/chatgpt"],
+});
+
+export const config = {
+  matcher: ["/((?!.*\\..*|_next).*)", "/", "/(api|trpc)(.*)"],
+};

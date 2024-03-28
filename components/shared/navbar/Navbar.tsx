@@ -4,6 +4,7 @@ import React from "react";
 import Theme from "./Theme";
 import MobileNav from "./MobileNav";
 import GlobalSearch from "../search/GlobalSearch";
+import { UserButton } from "@clerk/nextjs";
 // import MobileNav from "./MobileNav";
 // import GlobalSearch from "../search/GlobalSearch";
 
@@ -26,6 +27,8 @@ const Navbar = () => {
       <GlobalSearch />
 
       <div className="flex-between gap-5">
+        <UserButton />
+
         <Theme />
         <MobileNav />
       </div>

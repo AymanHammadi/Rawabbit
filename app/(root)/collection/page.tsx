@@ -11,22 +11,60 @@ import { SearchParamsProps } from "@/types";
 // import { redirect } from "next/navigation";
 // import { auth } 
 export default async function Home({ searchParams }: SearchParamsProps) {
-  // const { userId } = auth(); 
-  // if (!userId) return null;
+interface Tag {
+  _id: string;
+  name: string;
+}
 
-  // const result = await getSavedCollections({
-  //   clerkId: userId,
-  //   searchQuery: searchParams.q,
-  //   filter: searchParams.filter,
-  //   page: searchParams.page ? +searchParams.page : 1,
-  // });
-  const fakeLinks: any[] = [];
+interface Author {
+  _id: string;
+  name: string;
+  picture: string;
+}
+
+interface Content {
+  _id: string;
+  title: string;
+  tags: Tag[];
+  author: Author;
+  imgUrl: string;
+  alt: string;
+  href: string;
+  upvotes: string[];
+  views: number;
+  createdAt: Date;
+  website: string;
+  iosApp: string;
+  androidApp: string;
+  description: string;
+}
+
+const data: Content[] = [  ];
+  for (let i = 2; i <= 10; i++) {
+    data.push({
+      _id: `${i}`,
+      title: `عنوان المحتوى ${i}`,
+      tags: [{ _id: `${i}`, name: `تصنيف ${i}` }],
+      author: {
+        _id: "456",
+        name: `المؤلف ${i}`,
+        picture: "/public/assets/images/logo.png.svg",
+      },
+      imgUrl: `/assets/images/logo.png`,
+      alt: `الصورة ${i}`,
+      href: `/link/${i}`,
+      upvotes: [`user${i}`],
+      views: 1000 + i * 100,
+      createdAt: new Date(),
+      website: `https://example${i}.com`,
+      iosApp: `https://example${i}.com/ios`,
+      androidApp: `https://example${i}.com/android`,
+      description: `وصف المحتوى ${i}`,
+    });
+  }
+
   
-  // const session = await getServerSession(options);
 
-  // if (!session) {
-  //   redirect("/api/auth/signin?callbackUrl=/collection");
-  // }
 
   return (
     <>
@@ -48,8 +86,8 @@ export default async function Home({ searchParams }: SearchParamsProps) {
       </div>
 
       <div className="mt-10 flex w-full flex-col gap-6">
-        {fakeLinks.length > 0 ? (
-          fakeLinks.map((link: any) => (
+        {data.length > 0 ? (
+          data.map((link: any) => (
             <LinkCard
               key={link._id}
               _id={link._id}
@@ -61,6 +99,9 @@ export default async function Home({ searchParams }: SearchParamsProps) {
               upvotes={link.upvotes}
               views={link.views}
               createdAt={link.createdAt}
+              website="https://example.com"
+              iosApp="https://example.com/ios"
+              androidApp="https://example.com/android"
             />
           ))
         ) : (

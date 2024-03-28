@@ -24,7 +24,7 @@ const Page = async ({ searchParams }: SearchParamsProps) => {
 const result: Category[] = [
   {
     _id: "1",
-    name: "أخبار",
+    name: "تعليم عن بعد",
     description: "محتوى يتعلق بآخر الأخبار والأحداث",
     country: "مصر",
     createdOn: new Date("2024-03-29"),
@@ -39,7 +39,49 @@ const result: Category[] = [
   },
   {
     _id: "2",
-    name: "رياضة",
+    name: "العمل والتوظيف",
+    description: "محتوى يتعلق بالأحداث الرياضية والمباريات",
+    country: "السعودية",
+    createdOn: new Date("2024-03-28"),
+    contents: [
+      "موقع الرياضة 1",
+      "موقع الرياضة 2",
+      "تطبيق الرياضة 1",
+      // Add more content names as needed
+    ],
+  },
+  {
+    _id: "3",
+    name: "خدمات حكومية",
+    description: "محتوى يتعلق بأحدث التقنيات والأجهزة",
+    country: "الإمارات",
+    createdOn: new Date("2024-03-27"),
+    contents: [
+      "موقع التكنولوجيا 1",
+      "موقع التكنولوجيا 2",
+      "تطبيق التكنولوجيا 1",
+      "تطبيق التكنولوجيا 2",
+      // Add more content names as needed
+    ],
+  },
+  {
+    _id: "1",
+    name: "خدمات سياحية",
+    description: "محتوى يتعلق بآخر الأخبار والأحداث",
+    country: "مصر",
+    createdOn: new Date("2024-03-29"),
+    contents: [
+      "موقع الأخبار 1",
+      "موقع الأخبار 2",
+      "موقع الأخبار 3",
+      "تطبيق الأخبار 1",
+      "تطبيق الأخبار 2",
+      // Add more content names as needed
+    ],
+  },
+  {
+    _id: "2",
+    name: "الصحة",
     description: "محتوى يتعلق بالأحداث الرياضية والمباريات",
     country: "السعودية",
     createdOn: new Date("2024-03-28"),
@@ -108,7 +150,7 @@ const result: Category[] = [
   },
   {
     _id: "1",
-    name: "أخبار",
+    name: "مؤسسات حكومية",
     description: "محتوى يتعلق بآخر الأخبار والأحداث",
     country: "مصر",
     createdOn: new Date("2024-03-29"),
@@ -136,49 +178,7 @@ const result: Category[] = [
   },
   {
     _id: "3",
-    name: "تكنولوجيا",
-    description: "محتوى يتعلق بأحدث التقنيات والأجهزة",
-    country: "الإمارات",
-    createdOn: new Date("2024-03-27"),
-    contents: [
-      "موقع التكنولوجيا 1",
-      "موقع التكنولوجيا 2",
-      "تطبيق التكنولوجيا 1",
-      "تطبيق التكنولوجيا 2",
-      // Add more content names as needed
-    ],
-  },
-  {
-    _id: "1",
-    name: "أخبار",
-    description: "محتوى يتعلق بآخر الأخبار والأحداث",
-    country: "مصر",
-    createdOn: new Date("2024-03-29"),
-    contents: [
-      "موقع الأخبار 1",
-      "موقع الأخبار 2",
-      "موقع الأخبار 3",
-      "تطبيق الأخبار 1",
-      "تطبيق الأخبار 2",
-      // Add more content names as needed
-    ],
-  },
-  {
-    _id: "2",
-    name: "رياضة",
-    description: "محتوى يتعلق بالأحداث الرياضية والمباريات",
-    country: "السعودية",
-    createdOn: new Date("2024-03-28"),
-    contents: [
-      "موقع الرياضة 1",
-      "موقع الرياضة 2",
-      "تطبيق الرياضة 1",
-      // Add more content names as needed
-    ],
-  },
-  {
-    _id: "3",
-    name: "تكنولوجيا",
+    name: "متاجر إلكترونية",
     description: "محتوى يتعلق بأحدث التقنيات والأجهزة",
     country: "الإمارات",
     createdOn: new Date("2024-03-27"),
@@ -216,7 +216,7 @@ const result: Category[] = [
         {result.length > 0 ? (
           result.map((category) => (
             <Link
-              href={`/categorys/${category._id}`}
+              href={`/categories/${category._id}`}
               key={category._id}
               className="shadow-light100_darknone"
             >
@@ -246,12 +246,7 @@ const result: Category[] = [
         )}
       </section>
 
-      <div className="mt-10">
-        {/* <Pagination
-          pageNumber={searchParams?.page ? +searchParams.page : 1}
-          isNext={result.isNext}
-        /> */}
-      </div>
+
     </>
   );
 };
