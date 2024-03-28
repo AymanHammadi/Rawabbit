@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 import { Button } from "../ui/button";
 import { SignedOut, useAuth } from "@clerk/nextjs";
 
-const LeftSidebar = () => {
+const RightSidbar = () => {
   const { userId } = useAuth();
   const pathname = usePathname();
 
@@ -89,4 +89,4 @@ const LeftSidebar = () => {
   );
 };
 
-export default LeftSidebar;
+export default RightSidbar;

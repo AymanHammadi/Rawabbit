@@ -1,5 +1,5 @@
 import { options } from "@/app/api/auth/[...nextauth]/options";
-import LinkCard from "@/components/cards/LinkCard";
+import LinkCard from "@/components/cards/ContentCard";
 import Filters from "@/components/shared/Filters";
 import NoResult from "@/components/shared/NoResult";
 // import Pagination from "@/components/shared/Pagination";

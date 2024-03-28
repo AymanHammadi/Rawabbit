@@ -5,12 +5,12 @@ import { IUser } from "@/mongodb";
 export interface CreateAnswerParams {
   content: string;
   author: string; // User ID
-  question: string; // Question ID
+  content: string; // Content ID
   path: string;
 }
 
 export interface GetAnswersParams {
-  questionId: string;
+  contentId: string;
   sortBy?: string;
   page?: number;
   pageSize?: number;
@@ -41,8 +41,8 @@ export interface RecommendedParams {
   searchQuery?: string;
 }
 
-export interface ViewQuestionParams {
-  questionId: string;
+export interface ViewContentParams {
+  contentId: string;
   userId: string | undefined;
 }
 
@@ -51,60 +51,60 @@ export interface JobFilterParams {
   page: string;
 }
 
-export interface GetQuestionsParams {
+export interface GetContentsParams {
   page?: number;
   pageSize?: number;
   searchQuery?: string;
   filter?: string;
 }
 
-export interface CreateQuestionParams {
+export interface CreateContentParams {
   title: string;
   content: string;
-  tags: string[];
+  categoriess: string[];
   author: Schema.Types.ObjectId | IUser;
   path: string;
 }
 
-export interface GetQuestionByIdParams {
-  questionId: string;
+export interface GetContentByIdParams {
+  contentId: string;
 }
 
-export interface QuestionVoteParams {
-  questionId: string;
+export interface ContentVoteParams {
+  contentId: string;
   userId: string;
   hasupVoted: boolean;
   hasdownVoted: boolean;
   path: string;
 }
 
-export interface DeleteQuestionParams {
-  questionId: string;
+export interface DeleteContentParams {
+  contentId: string;
   path: string;
 }
 
-export interface EditQuestionParams {
-  questionId: string;
+export interface EditContentParams {
+  contentId: string;
   title: string;
   content: string;
   path: string;
 }
 
-export interface GetAllTagsParams {
+export interface GetAllCategoriesParams {
   page?: number;
   pageSize?: number;
   filter?: string;
   searchQuery?: string;
 }
 
-export interface GetQuestionsByTagIdParams {
-  tagId: string;
+export interface GetContentsByCategoryIdParams {
+  categoryId: string;
   page?: number;
   pageSize?: number;
   searchQuery?: string;
 }
 
-export interface GetTopInteractedTagsParams {
+export interface GetTopInteractedCategoriesParams {
   userId: string;
   limit?: number;
 }
@@ -134,13 +134,13 @@ export interface UpdateUserParams {
   path: string;
 }
 
-export interface ToggleSaveQuestionParams {
+export interface ToggleSaveContentParams {
   userId: string;
-  questionId: string;
+  contentId: string;
   path: string;
 }
 
-export interface GetSavedQuestionsParams {
+export interface GetSavedContentsParams {
   clerkId: string;
   page?: number;
   pageSize?: number;

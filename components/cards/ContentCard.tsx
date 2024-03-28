@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-// import RenderTag from "../shared/RenderTag";
+// import RenderCategory from "../shared/RenderCategory";
 import Metric from "../shared/Metric";
 import { formatAndDivideNumber, getTimestamp } from "@/lib/utils";
 import { Button } from "../ui/button";
@@ -11,7 +11,7 @@ import Image from "next/image";
 interface LinkProps {
   _id: string;
   title: string;
-  tags: {
+  categories: {
     _id: string;
     name: string;
   }[];
@@ -29,12 +29,13 @@ interface LinkProps {
   iosApp?: string;
   androidApp?: string;
   website?: string;
+  answers?: string;
 }
 
-const LinkCard = ({
+const ContentCard = ({
   _id,
   title,
-  tags,
+  categories,
   author,
   upvotes,
   imgUrl,
@@ -53,7 +54,7 @@ const LinkCard = ({
           <span className="subtle-regular text-dark400_light700 line-clamp-1 flex sm:hidden">
             {getTimestamp(createdAt)}
           </span>
-          <Link href={`/link/${_id}`} className="flex items-center">
+          <Link href={`/categories/${_id}`} className="flex items-center">
             <Image
               src={imgUrl}
               width={50}
@@ -73,8 +74,8 @@ const LinkCard = ({
         </SignedIn> */}
       </div>
       {/* <div className="mt-3.5 flex flex-wrap gap-2">
-        {tags.map((tag) => (
-          <RenderTag key={tag._id} _id={tag._id} name={tag.name} />
+        {categoriess.map((category) => (
+          <RenderCategory key={category._id} _id={category._id} name={category.name} />
         ))}
       </div> */}
       <div className="flex-between mt-6 w-full flex-wrap gap-3">
@@ -139,4 +140,4 @@ const LinkCard = ({
   );
 };
 
-export default LinkCard;
+export default ContentCard;
