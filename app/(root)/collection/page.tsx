@@ -1,4 +1,3 @@
-import { options } from "@/app/api/auth/[...nextauth]/options";
 import LinkCard from "@/components/cards/ContentCard";
 import Filters from "@/components/shared/Filters";
 import NoResult from "@/components/shared/NoResult";
@@ -92,7 +91,7 @@ const data: Content[] = [  ];
               key={link._id}
               _id={link._id}
               title={link.title}
-              tags={link.tags}
+              categories={link.categories}
               author={link.author}
               imgUrl={link.imgUrl}
               alt={link.alt}
@@ -116,7 +115,7 @@ const data: Content[] = [  ];
         <LinkCard
           _id="1"
           title="وزارة الهجرة التركية"
-          tags={[{ _id: "1", name: "حكومي" }]}
+          categories={[{ _id: "1", name: "حكومي" }]}
           author={{
             _id: "123",
             name: "محمد علي",
