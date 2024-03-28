@@ -41,7 +41,7 @@ const page = async () => {
         </Select>
         <br></br>
         <Link href={"/categories"}>
-          <Button className="btn-main-action min-h-[56px] w-40 group/item">
+          <Button className="btn-main-action  w-40 group/item">
             تصفح الآن
             <FaAngleLeft className="group-hover/item:-translate-x-1 btn-transition" />
           </Button>

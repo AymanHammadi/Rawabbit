@@ -4,13 +4,24 @@ import { Button } from "@/components/ui/button";
 import { sidebarLinks } from "@/constants";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
+import { useSession, signIn, signOut } from "next-auth/react";
+import { Session } from "inspector";
 
+// import { SignedOut, useAuth
 
-// import { SignedOut, useAuth 
-
-const RightSadbar =  () => {
+const RightSadbar = () => {
   // const { userId } = useAuth();
+  const { data: session } = useSession();
+
+  const { push } = useRouter();
+
+  const handleSignOut = async () => {
+    const data = await signOut({ redirect: false, callbackUrl: "/" });
+
+    push(data.url);
+  };
+
   const pathname = usePathname();
 
   return (
@@ -55,35 +66,48 @@ const RightSadbar =  () => {
           );
         })}
       </div>
-      <div className="flex flex-col gap-3">
-        <Link href="/sign-in">
-          <Button className="small-medium btn-secondary min-h-[41px] w-full rounded-lg px-4 py-3 shadow-none">
-            <Image
-              src="/assets/icons/account.svg"
-              alt="login"
-              width={20}
-              height={20}
-              className="invert-colors lg:hidden"
-            />
-            <span className="primary-text-gradient max-lg:hidden">
-              تسجيل دخول
-            </span>
+      {session ? (
+        <>
+          <Button
+            className="small-medium btn-secondary min-h-[41px] w-full rounded-lg px-4 py-3 shadow-none"
+            onClick={handleSignOut}
+          >
+            تسجيل الخروج
           </Button>
-        </Link>
+        </>
+      ) : (
+        <>
+          <div className="flex flex-col gap-3">
+            <Link href="/sign-in">
+              <Button className="small-medium btn-secondary min-h-[41px] w-full rounded-lg px-4 py-3 shadow-none">
+                <Image
+                  src="/assets/icons/account.svg"
+                  alt="login"
+                  width={20}
+                  height={20}
+                  className="invert-colors lg:hidden"
+                />
+                <span className="primary-text-gradient max-lg:hidden">
+                  تسجيل دخول
+                </span>
+              </Button>
+            </Link>
 
-        <Link href="/sign-up">
-          <Button className="small-medium light-border-2 btn-tertiary text-dark400_light900 min-h-[41px] w-full rounded-lg border px-4 py-3 shadow-none">
-            <Image
-              src="/assets/icons/sign-up.svg"
-              alt="sign up"
-              width={20}
-              height={20}
-              className="invert-colors lg:hidden"
-            />
-            <span className="max-lg:hidden">إنشاء حساب</span>
-          </Button>
-        </Link>
-      </div>
+            <Link href="/sign-up">
+              <Button className="small-medium light-border-2 btn-tertiary text-dark400_light900 min-h-[41px] w-full rounded-lg border px-4 py-3 shadow-none">
+                <Image
+                  src="/assets/icons/sign-up.svg"
+                  alt="sign up"
+                  width={20}
+                  height={20}
+                  className="invert-colors lg:hidden"
+                />
+                <span className="max-lg:hidden">إنشاء حساب</span>
+              </Button>
+            </Link>
+          </div>
+        </>
+      )}
     </section>
   );
 };

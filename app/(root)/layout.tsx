@@ -14,7 +14,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         <div className="flex">
           <RightSidebar />
           <section className="overflow-y-auto flex-1 px-6 pb-6 pt-36 max-md:pb-14 sm:px-14">
-            <div className="mx-auto w-full max-w-full">{children}</div>
+            <div className="mx-auto w-full h-screen max-w-full">{children}</div>
           </section>
           <Toaster />
         </div>
