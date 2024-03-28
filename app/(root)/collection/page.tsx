@@ -1,4 +1,4 @@
-import LinkCard from "@/components/cards/ContentCard";
+import ContentCard from "@/components/cards/ContentCard";
 import Filters from "@/components/shared/Filters";
 import NoResult from "@/components/shared/NoResult";
 // import Pagination from "@/components/shared/Pagination";
@@ -87,7 +87,7 @@ const data: Content[] = [  ];
       <div className="mt-10 flex w-full flex-col gap-6">
         {data.length > 0 ? (
           data.map((link: any) => (
-            <LinkCard
+            <ContentCard
               key={link._id}
               _id={link._id}
               title={link.title}
@@ -112,7 +112,7 @@ const data: Content[] = [  ];
           />
         )}
         <q>هذا مثال لمحتوى المفضلة سيتم حذفة بعد الانتهاء من التطوير</q>
-        <LinkCard
+        <ContentCard
           _id="1"
           title="وزارة الهجرة التركية"
           categories={[{ _id: "1", name: "حكومي" }]}
