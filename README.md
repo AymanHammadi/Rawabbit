@@ -1,8 +1,7 @@
 
 # Rawabit
-## Contributors
+## Contributors: [Ayman](https://github.com/AymanHammadi) , [Mohammed](https://github.com/TFmohamedyahia) , [Imad](https://github.com/imadbenmadi/)
 
-- [Ayman](https://github.com/AymanHammadi) , [Mohammed](https://github.com/TFmohamedyahia) , [Imad](https://github.com/imadbenmadi/)
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
