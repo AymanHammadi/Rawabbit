@@ -6,8 +6,6 @@ import LocalSearchbar from "@/components/shared/search/LocalSearchbar";
 import { CollectionFilters } from "@/constants/filters";
 // import { getSavedCollections } from "@/lib/actions/user.action";
 import { SearchParamsProps } from "@/types";
-// import { getServerSession } from "next-auth";
-// import { redirect } from "next/navigation";
 // import { auth } 
 export default async function Home({ searchParams }: SearchParamsProps) {
 interface Tag {
