@@ -22,11 +22,11 @@ export const sidebarLinks: SidebarLink[] = [
     route: "/categories",
     label: "الفئات",
   },
-  {
-    imgURL: "/assets/icons/user.svg",
-    route: "/profile",
-    label: "الملف الشخصي",
-  },
+  // {
+  //   imgURL: "/assets/icons/user.svg",
+  //   route: "/profile",
+  //   label: "الملف الشخصي",
+  // },
   // {
   //   imgURL: "/assets/icons/question.svg",
   //   route: "/questions",

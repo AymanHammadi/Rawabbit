@@ -103,13 +103,11 @@ const Request = ({ type, mongoUserId, requestDetails }: Props) => {
               <Select onValueChange={field.onChange} defaultValue={field.value}>
                 <FormControl>
                   <SelectTrigger className="no-focus paragraph-regular background-light900_dark300 light-border-2 text-dark300_light700 min-h-[56px] border">
-                    <SelectValue placeholder="Select a verified email to display" />
+                    <SelectValue placeholder="اختر فئة" />
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent className="no-focus paragraph-regular background-light900_dark300 light-border-2 text-dark300_light700 min-h-[56px] border">
-                  <SelectItem value="m@example.com">m@example.com</SelectItem>
-                  <SelectItem value="m@google.com">m@google.com</SelectItem>
-                  <SelectItem value="m@support.com">m@support.com</SelectItem>
+                  <SelectItem value="1">خدمات حكومية</SelectItem>
                 </SelectContent>
               </Select>
               <FormMessage className="text-red-500" />
@@ -127,13 +125,13 @@ const Request = ({ type, mongoUserId, requestDetails }: Props) => {
               <Select onValueChange={field.onChange} defaultValue={field.value}>
                 <FormControl>
                   <SelectTrigger className="no-focus paragraph-regular background-light900_dark300 light-border-2 text-dark300_light700 min-h-[56px] border">
-                    <SelectValue placeholder="Select a verified email to display" />
+                    <SelectValue placeholder="اختر دولة" />
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent className="no-focus paragraph-regular background-light900_dark300 light-border-2 text-dark300_light700 min-h-[56px] border">
-                  <SelectItem value="m@example.com">m@example.com</SelectItem>
-                  <SelectItem value="m@google.com">m@google.com</SelectItem>
-                  <SelectItem value="m@support.com">m@support.com</SelectItem>
+                  <SelectItem value="3">مصر</SelectItem>
+                  <SelectItem value="2">السعودية</SelectItem>
+                  <SelectItem value="1">تركيا</SelectItem>
                 </SelectContent>
               </Select>
               <FormMessage className="text-red-500" />
